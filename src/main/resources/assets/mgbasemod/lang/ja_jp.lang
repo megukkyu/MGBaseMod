@@ -1,1 +1,4 @@
+#アイテム
 item.item_copper_ingot.name=銅インゴット
+#ブロック
+tile.block_copper_ore.name=銅鉱石

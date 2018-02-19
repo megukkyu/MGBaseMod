@@ -1,0 +1,6 @@
+{
+    "parent": "block/cube_all",
+    "textures": {
+        "all": "mgbasemod:blocks/block_copper_ore"
+    }
+}

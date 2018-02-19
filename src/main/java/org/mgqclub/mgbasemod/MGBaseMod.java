@@ -1,5 +1,6 @@
 package org.mgqclub.mgbasemod;
 
+import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
@@ -14,6 +15,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 
 import org.apache.logging.log4j.Logger;
+import org.mgqclub.mgbasemod.block.RegisterBlocks;
+import org.mgqclub.mgbasemod.client.RegisterBlockModels;
 import org.mgqclub.mgbasemod.client.RegisterItemModels;
 import org.mgqclub.mgbasemod.item.RegisterItems;
 import org.mgqclub.mgbasemod.proxy.CommonProxy;
@@ -29,11 +32,12 @@ public class MGBaseMod {
     @ObjectHolder(Reference.MODID)
     public static class ITEMS {
     	public static final Item item_copper_ingot = null;
+    	public static final Item block_copper_ore = null;
     }
     
     @ObjectHolder(Reference.MODID)
     public static class BLOCKS {
-    	
+    	public static final Block block_copper_ore = null;
     }
     
     public Logger getLogger() {
@@ -61,8 +65,13 @@ public class MGBaseMod {
     }
     
     @SubscribeEvent
+    public static void registerBlock(RegistryEvent.Register<Block> event) {
+    	RegisterBlocks.registerBlocks(event);
+    }
+    
+    @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event) {
     	RegisterItemModels.registerItemModels(event);
-    }
+    	RegisterBlockModels.registerBlockModels();}
     
 }
