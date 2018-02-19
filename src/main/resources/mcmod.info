@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
+  "modid": "mgbasemod",
+  "name": "MGBaseMod",
+  "description": "Add items for other mods of mgqclub.",
+  "version": "alpha",
+  "mcversion": "1.12.2",
   "url": "",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["mgq_"],
+  "credits": "",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
