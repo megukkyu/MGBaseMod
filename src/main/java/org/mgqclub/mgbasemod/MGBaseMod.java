@@ -14,6 +14,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 
 import org.apache.logging.log4j.Logger;
+import org.mgqclub.mgbasemod.client.RegisterItemModels;
 import org.mgqclub.mgbasemod.item.RegisterItems;
 import org.mgqclub.mgbasemod.proxy.CommonProxy;
 
@@ -61,7 +62,7 @@ public class MGBaseMod {
     
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event) {
-    	
+    	RegisterItemModels.registerItemModels(event);
     }
     
 }
