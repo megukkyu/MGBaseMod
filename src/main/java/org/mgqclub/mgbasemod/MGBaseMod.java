@@ -14,6 +14,7 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry.ObjectHolder;
 
 import org.apache.logging.log4j.Logger;
+import org.mgqclub.mgbasemod.item.RegisterItems;
 import org.mgqclub.mgbasemod.proxy.CommonProxy;
 
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
@@ -26,7 +27,7 @@ public class MGBaseMod {
     
     @ObjectHolder(Reference.MODID)
     public static class ITEMS {
-    	
+    	public static final Item item_copper_ingot = null;
     }
     
     @ObjectHolder(Reference.MODID)
@@ -55,7 +56,7 @@ public class MGBaseMod {
     
     @SubscribeEvent
     public static void registerItem(RegistryEvent.Register<Item> event) {
-    	
+    	RegisterItems.registerItems(event);
     }
     
     @SubscribeEvent
