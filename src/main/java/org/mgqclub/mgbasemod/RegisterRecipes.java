@@ -12,5 +12,7 @@ public class RegisterRecipes {
 	
 	private static void registerSmeltingRecipes(FMLInitializationEvent event) {
 		FurnaceRecipes.instance().addSmeltingRecipeForBlock(MGBaseMod.BLOCKS.block_copper_ore, new ItemStack(MGBaseMod.ITEMS.item_copper_ingot), 0.6F);
+		FurnaceRecipes.instance().addSmeltingRecipeForBlock(MGBaseMod.BLOCKS.block_silver_ore, new ItemStack(MGBaseMod.ITEMS.item_silver_ingot), 0.6F);
+		
 	}
 }

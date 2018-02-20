@@ -14,6 +14,8 @@ public class RegisterBlockModels {
 	
 	private static void registerNormalBlockModels() {
 		regsiterNormalBlockModel(Item.getItemFromBlock(MGBaseMod.BLOCKS.block_copper_ore));
+		regsiterNormalBlockModel(Item.getItemFromBlock(MGBaseMod.BLOCKS.block_silver_ore));
+		
 	}
 	
 	private static void regsiterNormalBlockModel(Item block) {

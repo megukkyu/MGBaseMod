@@ -18,10 +18,12 @@ public class RegisterItems {
 	
 	private static void registerNormalItems(RegistryEvent.Register<Item> event) {
 		registerNormalItem(event, "item_copper_ingot");
+		registerNormalItem(event, "item_silver_ingot");
 	}
 	
 	private static void registerNormalItemBlocks(RegistryEvent.Register<Item> event) {
 		registerNormalItemBlock(event, MGBaseMod.BLOCKS.block_copper_ore, "block_copper_ore");
+		registerNormalItemBlock(event,MGBaseMod.BLOCKS.block_silver_ore, "block_silver_ore");
 	}
 	
 	private static void registerNormalItem(RegistryEvent.Register<Item> event, String name) {

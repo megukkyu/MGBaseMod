@@ -1,4 +1,6 @@
 #アイテム
 item.item_copper_ingot.name=銅インゴット
+item.item_silver_ingot.name=銀インゴット
 #ブロック
 tile.block_copper_ore.name=銅鉱石
+tile.block_silver_ore.name=銀鉱石

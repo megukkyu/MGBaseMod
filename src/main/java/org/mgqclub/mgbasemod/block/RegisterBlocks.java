@@ -14,7 +14,8 @@ public class RegisterBlocks {
 	}
 	
 	private static void registerNormalBlocks(RegistryEvent.Register<Block> event) {
-		registerNormalBlock(event, "block_copper_ore", Material.ROCK, 3F, 155F, "pickaxe", 1);
+		registerNormalBlock(event, "block_copper_ore", Material.ROCK, 3F, 15F, "pickaxe", 1);
+		registerNormalBlock(event, "block_silver_ore", Material.ROCK, 3F, 15F, "pickaxe", 2);
 	}
 	
 	private static void registerNormalBlock(RegistryEvent.Register<Block> event,String name, Material material, float hardness, float resistance) {

@@ -15,6 +15,7 @@ public class RegisterItemModels {
 	
 	private static void registerNormalItemModels(ModelRegistryEvent event) {
 		registerNormalItemModel(event,MGBaseMod.ITEMS.item_copper_ingot);
+		registerNormalItemModel(event,MGBaseMod.ITEMS.item_silver_ingot);
 	}
 	
 	private static void registerNormalItemModel(ModelRegistryEvent event, Item item) {

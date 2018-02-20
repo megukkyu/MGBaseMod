@@ -18,6 +18,12 @@ public class OreGenerator {
 					genStandardOre(event.getWorld(), event.getPos(), 20, oreCopperGen, 0, 64, event.getRand());
 			};
 			
+			WorldGenerator oreSilverGen = new WorldGenMinable(MGBaseMod.BLOCKS.block_copper_ore.getDefaultState(), 10);
+			if(TerrainGen.generateOre(event.getWorld(), event.getRand(), oreSilverGen, event.getPos(), OreGenEvent.GenerateMinable.EventType.CUSTOM) ) {
+					genStandardOre(event.getWorld(), event.getPos(), 20, oreSilverGen, 0, 32, event.getRand());
+			};
+			
+			
 	}
 	
 	protected void genStandardOre(World world, BlockPos pos, int size, WorldGenerator generator, int minY, int maxY, Random rnd) {

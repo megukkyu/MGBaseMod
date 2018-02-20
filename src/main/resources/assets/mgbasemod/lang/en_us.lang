@@ -1,4 +1,6 @@
 #Item
 item.item_copper_ingot.name=Copper Ingot
+item.item_silver_ingot.name=Silver Ingot
 #Block
 tile.block_copper_ore.name=Copper Ore
+tile.block_silver_ore.name=Silver Ore

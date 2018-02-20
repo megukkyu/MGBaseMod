@@ -35,12 +35,16 @@ public class MGBaseMod {
     @ObjectHolder(Reference.MODID)
     public static class ITEMS {
     	public static final Item item_copper_ingot = null;
+    	public static final Item item_silver_ingot = null;
+    	
     	public static final Item block_copper_ore = null;
+    	public static final Item block_silver_ore = null;
     }
     
     @ObjectHolder(Reference.MODID)
     public static class BLOCKS {
     	public static final Block block_copper_ore = null;
+    	public static final Block block_silver_ore = null;
     }
     
     public Logger getLogger() {
