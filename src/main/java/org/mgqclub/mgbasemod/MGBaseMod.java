@@ -50,13 +50,14 @@ public class MGBaseMod {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         logger = event.getModLog();
-    	RegisterOreDictionary.registerOres();
     	
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
     	MinecraftForge.ORE_GEN_BUS.register(this);
+    	
+    	RegisterOreDictionary.registerOres();
     	
     	RegisterRecipes.registerRecipes(event);
     }
