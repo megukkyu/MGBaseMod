@@ -14,18 +14,24 @@ public class RegisterBlocks {
 	}
 	
 	private static void registerNormalBlocks(RegistryEvent.Register<Block> event) {
-		registerNormalBlock(event, "block_copper_ore", Material.ROCK, 3F, 155F);
+		registerNormalBlock(event, "block_copper_ore", Material.ROCK, 3F, 155F, "pickaxe", 1);
 	}
 	
 	private static void registerNormalBlock(RegistryEvent.Register<Block> event,String name, Material material, float hardness, float resistance) {
-		event.getRegistry().register(
-				new Block(material)
-				.setRegistryName(Reference.MODID, name)
-				.setCreativeTab(CreativeTabs.BUILDING_BLOCKS)
-				.setUnlocalizedName(name)
-				.setHardness(hardness)
-				.setResistance(resistance)
-				);
+		registerNormalBlock(event,name,material, hardness,resistance, null, -1);
+		
+	}
+	
+	
+	private static void registerNormalBlock(RegistryEvent.Register<Block> event,String name, Material material, float hardness, float resistance, String toolClass, int miningLevel) {
+		Block block = new Block(material);
+		block.setRegistryName(Reference.MODID, name)
+		.setCreativeTab(CreativeTabs.BUILDING_BLOCKS)
+		.setUnlocalizedName(name)
+		.setHardness(hardness)
+		.setResistance(resistance);
+		if (toolClass != null && miningLevel > 0) {block.setHarvestLevel(toolClass, miningLevel);}
+		event.getRegistry().register(block);
 	}
 	
 }

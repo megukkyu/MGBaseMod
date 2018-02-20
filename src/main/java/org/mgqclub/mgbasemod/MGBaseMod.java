@@ -3,7 +3,9 @@ package org.mgqclub.mgbasemod;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.event.terraingen.OreGenEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -20,6 +22,7 @@ import org.mgqclub.mgbasemod.client.RegisterBlockModels;
 import org.mgqclub.mgbasemod.client.RegisterItemModels;
 import org.mgqclub.mgbasemod.item.RegisterItems;
 import org.mgqclub.mgbasemod.proxy.CommonProxy;
+import org.mgqclub.mgbasemod.worldgen.OreGenerator;
 
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
 @EventBusSubscriber
@@ -47,16 +50,20 @@ public class MGBaseMod {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         logger = event.getModLog();
+    	RegisterOreDictionary.registerOres();
+    	
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
+    	MinecraftForge.ORE_GEN_BUS.register(this);
     	
+    	RegisterRecipes.registerRecipes(event);
     }
     
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-    	
+ 
     }
     
     @SubscribeEvent
@@ -72,6 +79,13 @@ public class MGBaseMod {
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event) {
     	RegisterItemModels.registerItemModels(event);
-    	RegisterBlockModels.registerBlockModels();}
+    	RegisterBlockModels.registerBlockModels();
+    }
+    
+    @SubscribeEvent
+    public void generateOrePre(OreGenEvent.Pre event) {
+    	OreGenerator generator = new OreGenerator(); 
+    	generator.GenerateOres(event);
+    }
     
 }
