@@ -12,14 +12,16 @@ public class RegisterItemModels {
 	public static void registerItemModels(ModelRegistryEvent event) {
 		registerNormalItemModels(event);
 	}
-	
+
 	private static void registerNormalItemModels(ModelRegistryEvent event) {
 		registerNormalItemModel(event,MGBaseMod.ITEMS.item_copper_ingot);
 		registerNormalItemModel(event,MGBaseMod.ITEMS.item_silver_ingot);
+		registerNormalItemModel(event,MGBaseMod.ITEMS.item_lead_ingot);
+		registerNormalItemModel(event,MGBaseMod.ITEMS.item_tin_ingot);
 	}
-	
+
 	private static void registerNormalItemModel(ModelRegistryEvent event, Item item) {
 		ModelLoader.setCustomModelResourceLocation(item,0, new ModelResourceLocation(item.getRegistryName(), "inventory"));
 	}
-	
+
 }

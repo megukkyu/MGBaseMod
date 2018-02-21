@@ -15,17 +15,21 @@ public class RegisterItems {
 		registerNormalItems(event);
 		registerNormalItemBlocks(event);
 	}
-	
+
 	private static void registerNormalItems(RegistryEvent.Register<Item> event) {
 		registerNormalItem(event, "item_copper_ingot");
 		registerNormalItem(event, "item_silver_ingot");
+		registerNormalItem(event, "item_lead_ingot");
+		registerNormalItem(event, "item_tin_ingot");
 	}
-	
+
 	private static void registerNormalItemBlocks(RegistryEvent.Register<Item> event) {
 		registerNormalItemBlock(event, MGBaseMod.BLOCKS.block_copper_ore, "block_copper_ore");
-		registerNormalItemBlock(event,MGBaseMod.BLOCKS.block_silver_ore, "block_silver_ore");
+		registerNormalItemBlock(event, MGBaseMod.BLOCKS.block_silver_ore, "block_silver_ore");
+		registerNormalItemBlock(event, MGBaseMod.BLOCKS.block_lead_ore, "block_lead_ore");
+		registerNormalItemBlock(event, MGBaseMod.BLOCKS.block_tin_ore, "block_tin_ore");
 	}
-	
+
 	private static void registerNormalItem(RegistryEvent.Register<Item> event, String name) {
 		event.getRegistry().register(
 				new Item()
@@ -34,7 +38,7 @@ public class RegisterItems {
 				.setUnlocalizedName(name)
 				);
 	}
-	
+
 	private static void registerNormalItemBlock(RegistryEvent.Register<Item>event, Block block, String name) {
 		event.getRegistry().register(
 				new ItemBlock(block).setRegistryName(Reference.MODID, name)

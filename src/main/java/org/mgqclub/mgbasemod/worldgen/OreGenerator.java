@@ -19,9 +19,19 @@ public class OreGenerator {
 					genStandardOre(event.getWorld(), event.getPos(), 20, oreCopperGen, 0, 64, event.getRand());
 			};
 
-			WorldGenerator oreSilverGen = new WorldGenMinable(MGBaseMod.BLOCKS.block_silver_ore.getDefaultState(), 10);
+			WorldGenerator oreSilverGen = new WorldGenMinable(MGBaseMod.BLOCKS.block_silver_ore.getDefaultState(), 2);
 			if(TerrainGen.generateOre(event.getWorld(), event.getRand(), oreSilverGen, event.getPos(), OreGenEvent.GenerateMinable.EventType.CUSTOM) ) {
-					genStandardOre(event.getWorld(), event.getPos(), 20, oreSilverGen, 0, 32, event.getRand());
+					genStandardOre(event.getWorld(), event.getPos(), 9, oreSilverGen, 0, 32, event.getRand());
+			};
+
+			WorldGenerator oreLeadGen = new WorldGenMinable(MGBaseMod.BLOCKS.block_lead_ore.getDefaultState(), 7);
+			if(TerrainGen.generateOre(event.getWorld(), event.getRand(), oreLeadGen, event.getPos(), OreGenEvent.GenerateMinable.EventType.CUSTOM) ) {
+					genStandardOre(event.getWorld(), event.getPos(), 20, oreLeadGen, 0, 64, event.getRand());
+			};
+
+			WorldGenerator oreTinGen = new WorldGenMinable(MGBaseMod.BLOCKS.block_tin_ore.getDefaultState(), 10);
+			if(TerrainGen.generateOre(event.getWorld(), event.getRand(), oreTinGen, event.getPos(), OreGenEvent.GenerateMinable.EventType.CUSTOM) ) {
+					genStandardOre(event.getWorld(), event.getPos(), 20, oreTinGen, 0, 64, event.getRand());
 			};
 
 
